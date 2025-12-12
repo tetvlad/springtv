@@ -8,9 +8,7 @@
     <springProperty scope="context" name="logstashport" source="logstash.port" defaultValue="5000"/>
     <springProperty scope="context" name="level" source="logback.logging.level" defaultValue="INFO"/>
 
-    <springProfile name="production">
-
-    <appender name="stash" class="net.logstash.logback.appender.LogstashUdpSocketAppender">
+     <appender name="stash" class="net.logstash.logback.appender.LogstashUdpSocketAppender">
         <host>${logstashhost}</host>
         <!-- port is optional (default value shown) -->
         <port>${logstashport}</port>

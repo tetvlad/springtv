@@ -1,5 +1,19 @@
+server:
+  ssl:
+    key-store: keystore.p12
+    key-store-password: 123456
+    key-store-type: PKCS12
+    key-alias: tomcat
+    enabled: true
 
 spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 577816418290-cvjk13s7ndgqdlg1sjgn3igrhnl5m0bm.apps.googleusercontent.com
+            client-secret: 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
   cloud:
     gateway:
       routes:
@@ -7,10 +21,18 @@ spring:
           uri: lb://api
           predicates:
             - Path=/api/**
+        - id: replay
+          uri: lb://replay
+          predicates:
+            - Path=/replay/**
       default-filters:
         - name: Retry
           args:
             retries: 3
             methods: GET, POST, PUT, DELETE
+        - name: JwtToken
   application:
     name: gateway
+logging:
+  level:
+    org.springframework.security: trace

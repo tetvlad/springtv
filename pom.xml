@@ -23,6 +23,7 @@
 		<module>api</module>
 		<module>discovery</module>
 		<module>gateway</module>
+		<module>replay</module>
 	</modules>
 	<dependencies>
 		<dependency>
