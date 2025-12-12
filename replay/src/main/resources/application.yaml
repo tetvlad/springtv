@@ -1,0 +1,13 @@
+server:
+  port: 0
+spring:
+    application:
+      name: replay
+    security:
+      oauth2:
+        resourceserver:
+          jwt:
+            issuer-uri: https://accounts.google.com
+logging:
+  level:
+    root: trace
