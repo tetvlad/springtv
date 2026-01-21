@@ -17,4 +17,13 @@ public interface TacticCardMapper {
     TacticCardDTO tacticCardToTacticCardDto(TacticCard tacticCard);
 
     List<TacticCardDTO> tacticCardsToTacticCardDtos(List<TacticCard> tacticCards);
+
+
+
+    @Mapping(target = "hero.id" , source = "heroId")
+    @Mapping(target = "playerInfo.playerId", source = "playerInfoId")
+    @Mapping(target = "tactics.tacticId", source = "tacticsId")
+    TacticCard fromDto(TacticCardDTO tacticCardDTO);
+
+    List<TacticCard> fromListDto(List<TacticCardDTO> tacticCardDTOS);
 }

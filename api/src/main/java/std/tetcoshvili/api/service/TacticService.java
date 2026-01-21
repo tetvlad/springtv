@@ -21,6 +21,10 @@ public class TacticService {
     }
 
     @Transactional
+    public Tactics createTactic(TacticDTO tacticDTO) {
+        return tacticDAO.save(tacticMapper.toTactic(tacticDTO));
+    }
+    @Transactional
     public List<TacticDTO> getAll() {
         List<Tactics> tactics = tacticDAO.findAll();
         return tacticMapper.fromTactics(tactics);

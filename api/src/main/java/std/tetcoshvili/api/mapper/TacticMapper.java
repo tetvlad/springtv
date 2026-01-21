@@ -17,4 +17,6 @@ public interface TacticMapper {
     TacticDTO toDto(Tactics tactics);
 
     List<TacticDTO> fromTactics(List<Tactics> tactics);
+
+    Tactics toTactic(TacticDTO tacticDTO);
 }

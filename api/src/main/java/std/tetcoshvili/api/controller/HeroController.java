@@ -25,8 +25,8 @@ public class HeroController {
     @GetMapping("/{id}")
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     public Hero getHeroById(@PathVariable Long id) {
-        return heroService.getHeroById(id)
-                .orElseThrow(() -> new RuntimeException("Hero not found"));
+        return heroService.getHeroById(id);
+                //.orElseThrow(() -> new RuntimeException("Hero not found"));
     }
 
     @PostMapping

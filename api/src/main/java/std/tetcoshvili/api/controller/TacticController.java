@@ -1,9 +1,9 @@
 package std.tetcoshvili.api.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.*;
 import std.tetcoshvili.api.dto.TacticDTO;
+import std.tetcoshvili.api.entity.Tactics;
 import std.tetcoshvili.api.service.TacticService;
 
 import java.util.List;
@@ -17,6 +17,12 @@ public class TacticController {
     public TacticController(TacticService tacticService) {
         this.tacticService = tacticService;
     }
+
+    @PostMapping
+    public Tactics create(@RequestBody @Valid TacticDTO tactics) {
+        return tacticService.createTactic(tactics);   }
+
+
 
     @GetMapping
     public List<TacticDTO> getAll() {

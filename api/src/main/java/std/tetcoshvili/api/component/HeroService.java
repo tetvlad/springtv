@@ -3,6 +3,7 @@ package std.tetcoshvili.api.component;
 import org.springframework.stereotype.Service;
 import std.tetcoshvili.api.dao.HeroDAO;
 import std.tetcoshvili.api.entity.Hero;
+import std.tetcoshvili.api.exceptions.NotFoundException;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,8 +21,8 @@ public class HeroService {
         return heroDAO.findAll();
     }
 
-    public Optional<Hero> getHeroById(Long id) {
-        return heroDAO.findById(id);
+    public Hero getHeroById(Long id) {
+        return heroDAO.findById(id).orElseThrow(NotFoundException::new);
     }
 
     public Hero saveHero(Hero hero) {
