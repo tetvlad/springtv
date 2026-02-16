@@ -8,7 +8,7 @@ public class PlayerInfo {
 
     @Id
     @GeneratedValue
-    private UUID playerId;
+    private Long playerId;
 
     private String name;
 
@@ -21,11 +21,11 @@ public class PlayerInfo {
 
     public PlayerInfo() {}
 
-    public UUID getPlayerId() {
+    public Long getPlayerId() {
         return playerId;
     }
 
-    public void setPlayerId(UUID playerId) {
+    public void setPlayerId(Long playerId) {
         this.playerId = playerId;
     }
 

@@ -2,10 +2,12 @@ package std.tetcoshvili.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 import java.util.logging.Logger;
 
 @SpringBootApplication
+@EnableFeignClients
 public class Spring_tvApplication {
     private static final Logger log = Logger.getLogger(Spring_tvApplication.class.getName());
 

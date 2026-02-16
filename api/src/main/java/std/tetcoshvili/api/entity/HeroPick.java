@@ -5,12 +5,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
-import java.util.UUID;
+
 
 @Entity
 public class HeroPick {
     @Id
-    private UUID id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "hero_id")

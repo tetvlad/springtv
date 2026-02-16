@@ -8,7 +8,7 @@ public class Team {
 
     @Id
     @GeneratedValue
-    private UUID teamId;
+    private Long teamId;
 
     private String teamName;
     private Integer maxTeamSize;
@@ -19,11 +19,11 @@ public class Team {
 
     public Team() {}
 
-    public UUID getTeamId() {
+    public Long getTeamId() {
         return teamId;
     }
 
-    public void setTeamId(UUID teamId) {
+    public void setTeamId(Long teamId) {
         this.teamId = teamId;
     }
 

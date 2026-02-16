@@ -17,5 +17,6 @@ public class Tactics {
     private String description;
 
     @OneToMany(mappedBy = "tactics")
-    private List<HeroPick> heroPicks;
+    //private List<HeroPick> heroPicks;
+    private List<TacticCard> tacticCards;
 }

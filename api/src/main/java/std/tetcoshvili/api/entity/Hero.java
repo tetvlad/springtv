@@ -1,25 +1,27 @@
 package std.tetcoshvili.api.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
-import java.util.UUID;
 
-
+@Data
 @Entity
 public class Hero {
     @Id
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String name;
-    private Integer attack;
-    private Integer defense;
+    private String attackType;
+    private Integer baseHealth;
     private Integer mobility;
-    private Integer health;
+    private Integer baseDefense;
 
     @OneToMany(mappedBy = "hero")
+    @JsonIgnore
     private List<Skill> skills;
+
 }
