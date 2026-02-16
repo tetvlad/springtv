@@ -1,5 +1,8 @@
 
 spring:
+  jackson:
+    deserialization:
+      accept-single-value-as-array: true
   application:
     name: api
   datasource:
@@ -16,11 +19,20 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
+        security:
+          enabled: false
+
+  logging:
+    level:
+      org:
+        springframework:
+          security: DEBUG
 
 server:
   port: 33333
 
 eureka:
-
+  client:
+    enabled: false
   instance:
     instance-id: ${spring.application.name}:${random.int}

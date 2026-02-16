@@ -37,7 +37,10 @@ public class SecConfig {
         return http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                    .anyRequest().authenticated())
+                        .requestMatchers("/api/hero/load-heroes").permitAll()
+                        .requestMatchers("/api/hero/load-skills").permitAll()
+                        .requestMatchers("/api/hero/load-abilities").permitAll()
+                        .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())
                 .formLogin(Customizer.withDefaults())
                 .build();

@@ -15,10 +15,10 @@ public class Hero {
     private Long id;
 
     private String name;
-    private Integer attack;
-    private Integer defense;
+    private String attackType;
+    private Integer baseHealth;
     private Integer mobility;
-    private Integer health;
+    private Integer baseDefense;
 
     @OneToMany(mappedBy = "hero")
     @JsonIgnore
